@@ -1,6 +1,6 @@
 Name:		kollision
-Version:	15.08.0
-Release:	2
+Version:	15.08.1
+Release:	1
 Epoch:		1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
@@ -17,9 +17,19 @@ BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5TextWidgets)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5NotifyConfig)
+BuildRequires:	cmake(KF5NewStuff)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Qml)
+BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	cmake(Qt5QuickWidgets)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Test)
 
 %description -n kollision
 A simple ball dodging game.
