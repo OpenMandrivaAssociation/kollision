@@ -1,6 +1,6 @@
 Name:		kollision
-Version:	15.12.0
-Release:	2
+Version:	15.12.1
+Release:	1
 Epoch:		1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
