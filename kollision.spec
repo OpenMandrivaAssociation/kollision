@@ -32,6 +32,7 @@ BuildRequires:	cmake(Qt5Svg)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(KF5Notifications)
 BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5Crash)
 
 %description -n kollision
 A simple ball dodging game.
