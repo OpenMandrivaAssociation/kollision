@@ -1,12 +1,13 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kollision
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
 Url:		http://www.kde.org/applications/games/kollision/
-Source:		http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
@@ -37,14 +38,13 @@ BuildRequires:	cmake(KF5Crash)
 %description -n kollision
 A simple ball dodging game.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/kollision
-%{_datadir}/appdata/*.xml
+%{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.kollision.desktop
 %{_datadir}/kollision
 %{_datadir}/kxmlgui5/kollision
 %{_iconsdir}/*/*/apps/kollision.*
-%doc %{_docdir}/*/*/kollision
 
 #------------------------------------------------------------------------------
 
@@ -57,3 +57,4 @@ A simple ball dodging game.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html
