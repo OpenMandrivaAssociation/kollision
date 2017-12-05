@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kollision
-Version:	17.08.3
+Version:	17.11.90
 Release:	1
 Epoch:		1
 Summary:	A simple ball dodging game
@@ -43,7 +43,6 @@ A simple ball dodging game.
 %{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.kollision.desktop
 %{_datadir}/kollision
-%{_datadir}/kxmlgui5/kollision
 %{_iconsdir}/*/*/apps/kollision.*
 
 #------------------------------------------------------------------------------
