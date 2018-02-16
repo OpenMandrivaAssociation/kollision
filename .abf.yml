@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kollision-17.12.1.tar.xz: e65620566ef959e0a9b0a0a6727e4d035fa71970
+sources:
+  kollision-17.12.2.tar.xz: 26e61ed483382237d5c18cd6787237053926c327
