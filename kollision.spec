@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kollision
-Version:	 18.11.90
+Version:	 18.12.0
 Release:	1
 Epoch:		1
 Summary:	A simple ball dodging game
