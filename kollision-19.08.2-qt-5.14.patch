@@ -1,0 +1,54 @@
+diff -up kollision-19.08.2/animator.h.omv~ kollision-19.08.2/animator.h
+--- kollision-19.08.2/animator.h.omv~	2019-10-15 15:41:02.643481143 +0200
++++ kollision-19.08.2/animator.h	2019-10-15 15:41:14.570550086 +0200
+@@ -12,7 +12,7 @@
+ 
+ #include "animation.h"
+ #include <QTimer>
+-#include <QTime>
++#include <QElapsedTimer>
+ 
+ class Animator : public AnimationGroup
+ {
+@@ -27,7 +27,7 @@ public slots:
+     void tick();
+ private:
+     QTimer m_timer;
+-    QTime m_time;
++    QElapsedTimer m_time;
+ };
+ 
+ #endif // ANIMATOR_H
+diff -up kollision-19.08.2/mainarea.cpp.omv~ kollision-19.08.2/mainarea.cpp
+diff -up kollision-19.08.2/mainarea.h.omv~ kollision-19.08.2/mainarea.h
+--- kollision-19.08.2/mainarea.h.omv~	2019-10-15 15:28:38.831179567 +0200
++++ kollision-19.08.2/mainarea.h	2019-10-15 15:28:55.140273953 +0200
+@@ -13,6 +13,7 @@
+ 
+ #include <QTimer>
+ #include <QTime>
++#include <QElapsedTimer>
+ #include <QList>
+ #include <QGraphicsScene>
+ #include <KGameRenderer>
+@@ -35,7 +36,7 @@ private:
+     QTimer m_timer;
+     int m_lastTime;
+     int m_lastGameTime;
+-    QTime m_time;
++    QElapsedTimer m_time;
+ 
+     /// time interval between two balls being added
+     int m_ball_timeout;
+diff -up kollision-19.08.2/mainwindow.cpp.omv~ kollision-19.08.2/mainwindow.cpp
+--- kollision-19.08.2/mainwindow.cpp.omv~	2019-10-15 15:28:07.306997109 +0200
++++ kollision-19.08.2/mainwindow.cpp	2019-10-15 15:28:12.759028666 +0200
+@@ -29,7 +29,7 @@ MainWindow::MainWindow()
+ {
+     m_main = new MainArea();
+     QGraphicsView* view = new QGraphicsView(m_main, this);
+-    view->setOptimizationFlags( QGraphicsView::DontClipPainter |
++    view->setOptimizationFlags( //QGraphicsView::DontClipPainter |
+                                 QGraphicsView::DontSavePainterState |
+                                 QGraphicsView::DontAdjustForAntialiasing );
+ //    view->setViewportUpdateMode( QGraphicsView::FullViewportUpdate );
