@@ -6,7 +6,7 @@ Epoch:		1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-Url:		http://www.kde.org/applications/games/kollision/
+Url:		https://www.kde.org/applications/games/kollision/
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	ninja
