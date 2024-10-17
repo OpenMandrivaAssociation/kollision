@@ -8,7 +8,7 @@ Release:	%{?git:0.%{git}.}1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
 License:	GPLv2 and LGPLv2 and GFDL
-Url:		http://www.kde.org/applications/games/kollision/
+Url:		https://www.kde.org/applications/games/kollision/
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/games/kollision/-/archive/%{gitbranch}/kollision-%{gitbranchd}.tar.bz2#/kollision-%{git}.tar.bz2
 %else
