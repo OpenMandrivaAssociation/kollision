@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kollision
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
@@ -41,27 +41,17 @@ BuildRequires:	cmake(KF6Notifications)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6Crash)
 
+%rename plasma6-kollision
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 A simple ball dodging game.
 
-%files -f kollision.lang
+%files -f %{name}.lang
 %{_bindir}/kollision
 %{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.kollision.desktop
 %{_datadir}/kollision
 %{_iconsdir}/*/*/apps/kollision.*
-
-#------------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kollision-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kollision --with-html
