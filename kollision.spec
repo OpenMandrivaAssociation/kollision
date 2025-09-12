@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Name:		kollision
-Version:	25.08.0
+Version:	25.08.1
 Release:	%{?git:0.%{git}.}1
 Summary:	A simple ball dodging game
 Group:		Graphical desktop/KDE
